@@ -35,6 +35,24 @@ const navLinks = [
       hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
     }
   ];
+  const socials = [
+    {
+       name: "Youtube",
+       icon: "/icons/youtube.png",
+       url: "#",
+    },
+    {
+       name: "X (Twitter)",
+       icon: "/icons/twitter.png",
+       url: "#",
+    },
+    {
+       name: "Discord",
+       icon: "/icons/discord.png",
+       url: "#",
+    },
+   ];
 export{
-    navLinks
+    navLinks,
+    socials,
 };

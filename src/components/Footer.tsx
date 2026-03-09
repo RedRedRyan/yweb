@@ -1,26 +1,48 @@
 import React from 'react'
+import { navLinks,socials } from '../../constants';
 
 const Footer = () => {
   return (
     <section id="footer">
     <div className='footer-grid'>
-		<div className="md:col-span-3">
+		<div className="md:col-span-2">
 		 <div  className="info1" />
-         <h1>ystudios</h1>
+         <h3>Socials</h3>
+		 
+		 <div className="flex-center gap-5">
+			{socials.map((social) => (
+			 <a
+			 	key={social.name}
+				href={social.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label={social.name}
+			 >
+				<img src={social.icon} className='size-10' />
+			 </a>
+			))}
+		 </div>
 		 
 		</div>
 		
-		<div className="md:col-span-3">
+		<div className="md:col-span-2">
 		 <div  className="info2" />
-            <h1>Contact Us</h1>
+            <ul className='font-arvo text-xl text-white'>
+		 {navLinks.map((link) => (
+			<li key={link.label}>
+			 <a href={link.href}>{link.label}</a>
+			</li>
+		 ))}
+		</ul>
 		</div>
+
+        <div className="md:col-span-2">
+        <p className='text-[white]'>&copy; {new Date().getFullYear()} YStudios. All Rights Reserved.</p>
+            </div>
         
 		
 		
      </div>
-     <div className='w-full'>
-     <p className='text-[white]'>&copy; {new Date().getFullYear()} YStudios. All Rights Reserved.</p>
-        </div>
     </section>
   )
 }
