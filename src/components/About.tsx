@@ -1,8 +1,13 @@
-import React from 'react'
+import React,  {useRef} from 'react'
 
 import LogoLoop from './LogoLoop';
+import { useGSAP } from '@gsap/react';
+import ScrollReveal from './ScrollReveal';
 
 const About = () => {
+    useGSAP(() => {
+        
+    });
 
 
       const imageLogos = [
@@ -16,6 +21,17 @@ const About = () => {
         <h1 className='text-center font-nunito text-3xl'>About Us</h1>
         <p className='text-center'>We use</p>
         </div>
+        
+        <ScrollReveal
+  baseOpacity={0.1}
+  enableBlur
+  baseRotation={3}
+  blurStrength={4}
+>
+  When does a man die? When he is hit by a bullet? No! When he suffers a disease?
+  No! When he ate a soup made out of a poisonous mushroom?
+  No! A man dies when he is forgotten!
+</ScrollReveal>
         
 
 <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>

@@ -100,7 +100,7 @@ body {
   #hero {
       @apply relative z-10 min-h-dvh w-full border border-transparent ;
       h1 {
-        @apply  md:mt-24 mt-40  text-8xl md:text-[18vw] leading-none text-center font-arvo text-gradient;
+        @apply text-8xl md:text-[18vw] leading-none text-center font-arvo text-gradient;
       }
       .body{
       @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;
@@ -132,7 +132,9 @@ body {
       
   }
   #about {
-    @apply relative min-h-dvh w-full bg-dark;
+    @apply relative min-h-dvh w-full ;
+    
+    
   }
   #projects{
     @apply relative min-h-dvh w-full bg-white;
