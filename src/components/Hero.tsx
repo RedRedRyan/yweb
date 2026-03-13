@@ -27,6 +27,8 @@ const Hero = () => {
 		// Apply text-gradient class once before animating
 		heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
+		gsap.fromTo(".left-leaf", { x: -600 }, { x: 0, duration: 2, ease: "power1.inOut" });
+
 		gsap.to(".title", {
 			duration : 2.5,
 			scrambleText: {
@@ -67,7 +69,7 @@ const Hero = () => {
 			scrub: true,
 		 },
 		})
-		.to(".right-leaf", { y: 200 }, 0)
+		.to(".right-leaf", { y: 800 }, 0)
 		.to(".left-leaf", { y: -200 }, 0)
 		.to(".arrow", { y: 100 }, 0);
 		
@@ -76,10 +78,23 @@ const Hero = () => {
     <section id='hero'> 
 	<Aurora/>
     <h1 className='title'>ystudios</h1>
+
+	
+		
+	<img
+		 src="/images/flower.png"
+		 alt="left-leaf"
+		 className="left-leaf"
+		/>
+		<img
+		 src="/images/ymask.png"
+		 alt="right-leaf"
+		 className="right-leaf"
+		/>
     <div className='body'>
     <div className="content">
 		<div className="space-y-5 hidden md:block">
-			 <p>Silicon Savannah ?</p>
+			
 			 <p className="subtitle">
 				The Only Way <br /> is Up
 			 </p>
@@ -87,9 +102,9 @@ const Hero = () => {
 			
 			<div className="view-cocktails">
 			 <p className="subtitle">
-				Creating digital experiences and designing solutions from AI to business Software
+				Creating digital experiences.
 			 </p>
-			 <a href="#projects">View projects</a>
+			 <a href="#projects" className='badge'>View projects</a>
 			</div>
 		 </div>
 	</div>

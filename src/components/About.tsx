@@ -1,28 +1,41 @@
-import React,  {useRef} from 'react'
-
-import LogoLoop from './LogoLoop';
-import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { SplitText} from 'gsap/all'
+import { useGSAP } from '@gsap/react'
 import ScrollReveal from './ScrollReveal';
 
 const About = () => {
-    useGSAP(() => {
-        
-    });
+ useGSAP(() => {
+	const titleSplit = SplitText.create('#about h2', {
+	 type: 'words'
+	})
+	
+	const scrollTimeline = gsap.timeline({
+	 scrollTrigger: {
+		trigger: '#about',
+		start: 'top center'
+	 }
+	})
+	
+	scrollTimeline
+	 .from(titleSplit.words, {
+		opacity: 0, duration: 1, yPercent: 100, ease: 'expo.out', stagger: 0.02
+	})
+	 .from('.top-grid div, .bottom-grid div', {
+		opacity: 0, duration: 1, ease: 'power1.inOut', stagger: 0.04,
+	}, '-=0.5')
+ })
+ 
+ return (
 
+	<div id="about">
+		<div className='flex items-center justify-between mb-10 gap-5'>
 
-      const imageLogos = [
-        { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-        { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-        { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
-      ];
-  return (
-    <section id='about'>
-        <div className='mt-10 mb-5'>
-        <h1 className='text-center font-nunito text-3xl'>About Us</h1>
-        <p className='text-center'>We use</p>
-        </div>
-        
-        <ScrollReveal
+		<div className=''>
+						<h2 className='text-4xl font-bold text-purple md:w-full xl:text-6xl'>About <br/> Us</h2>
+		</div>
+
+		<div className='xl:w-2/3  md:w-full' >
+		<ScrollReveal
   baseOpacity={0.1}
   enableBlur
   baseRotation={3}
@@ -32,36 +45,39 @@ const About = () => {
   No! When he ate a soup made out of a poisonous mushroom?
   No! A man dies when he is forgotten!
 </ScrollReveal>
-        
+		</div>
+		
+		</div>
+	 
+	 
+	 <div className="top-grid">
+		
+		
+		<div className="md:col-span-9 bg-green">
+		 <div  className="info1" />
+		 
 
-<div style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>
-      {/* Basic horizontal loop */}
-      <LogoLoop
-        logos={imageLogos}
-        speed={100}
-        direction="left"
-        logoHeight={60}
-        gap={60}
-        hoverSpeed={0}
-        scaleOnHover
-        fadeOut
-        fadeOutColor="#ffffff"
-        ariaLabel="Technology partners"
-      />
-      
-{/* Vertical loop with deceleration on hover */}
-{/* <LogoLoop
-  logos={imageLogos}
-  speed={100}
-  direction="left"
-  logoHeight={60}
-  gap={60}
-  hoverSpeed={0}
-  fadeOut
-/> */}
-    </div>
-    </section>
-  )
+		</div>
+		
+		<div className="md:col-span-3">
+		 <div  className="noisy" />
+		 <img src="/images/abt5.png" alt="grid-img-5" />
+		</div>
+	 </div>
+	 
+	 <div className="bottom-grid">
+		<div className="md:col-span-8">
+		 <div  className="noisy" />
+		 <img src="/images/abt3.png" alt="grid-img-3" />
+		</div>
+		
+		<div className="md:col-span-4">
+		 <div  className="noisy" />
+		 <img src="/images/abt4.png" alt="grid-img-4" />
+		</div>
+	 </div>
+	 
+	</div>
+ )
 }
-
 export default About
