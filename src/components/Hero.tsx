@@ -87,7 +87,7 @@ const Hero = () => {
 		 className="left-leaf"
 		/>
 		<img
-		 src="/images/ymask.png"
+		 src="/images/shuriken.png"
 		 alt="right-leaf"
 		 className="right-leaf"
 		/>

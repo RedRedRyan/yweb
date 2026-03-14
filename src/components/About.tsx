@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import { SplitText} from 'gsap/all'
 import { useGSAP } from '@gsap/react'
 import ScrollReveal from './ScrollReveal';
+import Carousel from './Carousel';
 
 const About = () => {
  useGSAP(() => {
@@ -28,7 +29,8 @@ const About = () => {
  return (
 
 	<div id="about">
-		<div className='flex items-center justify-between mb-10 gap-5'>
+		
+		<div className='flex items-center justify-between mb-10 gap-5  p-5 flex-col md:flex-row'>
 
 		<div className=''>
 						<h2 className='text-4xl font-bold text-purple md:w-full xl:text-6xl'>About <br/> Us</h2>
@@ -53,29 +55,25 @@ const About = () => {
 	 <div className="top-grid">
 		
 		
-		<div className="md:col-span-9 bg-green">
-		 <div  className="info1" />
-		 
+		<div className="md:col-span-3 bg-green">
+			<div  className="info1" />
+		 	<Carousel
+			baseWidth={300}
+			autoplay={true}
+			autoplayDelay={3000}
+			pauseOnHover={false}
+			loop={true}
+			round={false}
+			/>
+
+		</div>
+		<div className='md:col-span-9 bg-purple'>
 
 		</div>
 		
-		<div className="md:col-span-3">
-		 <div  className="noisy" />
-		 <img src="/images/abt5.png" alt="grid-img-5" />
-		</div>
-	 </div>
-	 
-	 <div className="bottom-grid">
-		<div className="md:col-span-8">
-		 <div  className="noisy" />
-		 <img src="/images/abt3.png" alt="grid-img-3" />
-		</div>
 		
-		<div className="md:col-span-4">
-		 <div  className="noisy" />
-		 <img src="/images/abt4.png" alt="grid-img-4" />
-		</div>
-	 </div>
+	 	</div>
+	 
 	 
 	</div>
  )

@@ -109,7 +109,7 @@ body {
     }
 
     .right-leaf {
-        @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/2 md:w-fit w-24 size-48;
+        @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/2 md:w-fit w-24 size-48 md:hidden;
     }
       .body{
       @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;
@@ -142,6 +142,9 @@ body {
 
   #about {
     @apply min-h-screen py-28 2xl:px-0 px-5 container mx-auto;
+    .shuriken {
+      @apply absolute right-0;
+  }
 
     
 
@@ -177,7 +180,7 @@ body {
         @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
 
         > div {
-            @apply rounded-3xl overflow-hidden h-84 relative;
+            @apply rounded-3xl overflow-hidden h-64 relative;
         }
 
         img {
@@ -185,23 +188,12 @@ body {
         }
     }
 
-    .bottom-grid {
-        @apply grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5;
-
-        > div {
-            @apply rounded-3xl overflow-hidden h-72 relative;
-        }
-
-        img {
-            @apply object-cover w-full h-full;
-        }
-    }
 }
   #projects{
-    @apply relative min-h-dvh w-full bg-green;
+    @apply relative min-h-dvh w-full bg-purple;
   }
   #footer {
-      @apply w-full py-10 bg-dark text-center text-sm text-gray-500;
+      @apply w-full py-10 bg-green text-center text-sm text-gray-500;
       .footer-grid {
         @apply grid grid-cols-1 xl:grid-cols-6 gap-5 mb-5 md:px-0 px-5;
 

@@ -1,3 +1,5 @@
+import { link } from "fs";
+
 const navLinks = [
     {
       label: 'home',
@@ -52,7 +54,40 @@ const navLinks = [
        url: "#",
     },
    ];
+
+   const ycrew= [
+     {
+       title: 'Jude',
+       description: 'Software Engineer. AI,IoT.',
+       id: 1,
+       icon: "/images/jude.png",
+       link: 'https://www.linkedin.com/in/jude-tulel-9b1a4b1a0/'
+     },
+     {
+       title: 'Costo',
+       description: 'Environmental Artist. 3D Modeling and Animations.',
+       id: 2,
+       icon: "/images/costo.png",
+       link: 'https://www.linkedin.com/in/costo-odhiambo-9b1a4b1a0/'
+     },
+     {
+       title: 'Koiya',
+       description: 'Motion Designer. Audio and Visual Editor',
+       id: 3,
+       icon: "/images/koiya.png",
+        link: 'https://www.linkedin.com/in/koiya-odhiambo-9b1a4b1a0/'
+     },
+     {
+       title: 'RedRyan',
+       description: 'UI/UX Artist. Unity Game Developer.',
+       id: 4,
+       icon: "/images/redryan.png",
+        link: 'https://www.linkedin.com/in/redryan-odhiambo-9b1a4b1a0/'
+     }
+
+   ];
 export{
     navLinks,
     socials,
+    ycrew
 };
