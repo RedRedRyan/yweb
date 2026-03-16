@@ -1,4 +1,5 @@
 import { link } from "fs";
+import { title } from "process";
 
 const navLinks = [
     {
@@ -86,8 +87,66 @@ const navLinks = [
      }
 
    ];
+
+  const appList = [
+    {
+      title: "Nairobi Block Exchange",
+      logo: "/images/nbx.png",
+      description: "Tokenizing equities and bonds on Hedera's Hashgraph.",
+      link: "#",
+      category: "Fintech"
+    
+    },
+    {
+      title: "RelyOn POS",
+      logo: "/images/relyon.png",
+      description: "A point-of-sale system with real-time inventory management and analytics for small businesses.",
+      link: "#",
+      category: "Fintech"
+    },
+    {
+      title: "Monster Trux",
+      logo: "/images/monstertrux.png",
+      description: "Drive, race and explore the Monsterlands. Built with Unity on Polygon.",
+      link: "#",
+      category: "Games"
+    },
+    {
+      title: "Campus Connect",
+      logo: "/images/campusconnect.png",
+      description: "A social platform for university students to connect, share resources, and collaborate on projects.",
+      link: "#",
+      category: "Social"
+    },
+    {
+      title: "Agent OG",
+      logo: "/images/agentog.png",
+      description: "Rent AI agents to automate tasks, generate content, and provide insights across various domains.",
+      link: "#",
+      category: "AI"
+    },
+    {
+      title: "BlockFridge",
+      logo: "/images/blockfridge.png",
+      description: "A decentralized marketplace for buying and selling fresh produce directly from local farmers.",
+      link: "#",
+      category: "Fintech"
+    },
+    
+  ];
+const featureList = [
+  {
+    title: "Toon World",
+    description: "A low poly city with building and roadways made in Blender",
+    link: "#",
+    media: "/images/toonworld.png",
+  }
+];
+
 export{
     navLinks,
     socials,
-    ycrew
+    ycrew,
+    appList,
+    featureList
 };
