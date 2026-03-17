@@ -2,6 +2,8 @@ import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { appList } from "../../constants/index"
+import ProjectCard from './ProjectCard';
 
 const Projects = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -30,32 +32,24 @@ const Projects = () => {
 		<h2 className="will-fade">PROJECTS</h2>
 		
 		<div className="content">
-		 {/* <ul className="space-y-4 will-fade">
-			{goodLists.map((feature, index) => (
-			 <li key={index} className="flex items-center gap-2">
-				<img src="/images/check.png" alt="check" />
-				<p>{feature}</p>
-			 </li>
-			))}
-		 </ul> */}
-		 
-		 
-		 
-		 {/* <ul className="space-y-4 will-fade">
-			{featureLists.map((feature, index) => (
-			 <li key={index} className="flex items-center justify-start gap-2">
-				<img src="/images/check.png" alt="check" />
-				<p className="md:w-fit w-60">{feature}</p>
-			 </li>
-			))}
-		 </ul> */}
+       {/* Projects Grid */}
+     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {appList.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
+	<div>
+    
+  </div>
 		</div>
 		
 		<div className="masked-container">
-		 <h2 className="will-fade">Made with Y</h2>
+		 <h2 className="will-fade">Made  Y</h2>
 		 <div id="masked-content">
-			<h3>Made with Craft, Poured with Passion</h3>
-			<p>This isn’t just a drink. It’s a carefully crafted moment made just for you.</p>
+      
+      
+      <p>Build It With Us</p>
+        
 		 </div>
 		</div>
 	 </div>
