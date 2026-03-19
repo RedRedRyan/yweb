@@ -7,7 +7,7 @@ const Footer = () => {
     <div className='footer-grid'>
 		<div className="md:col-span-2">
 		 <div  className="info1" />
-         <h3>Socials</h3>
+         <h1>Socials</h1>
 		 
 		 <div className="flex-center gap-5">
 			{socials.map((social) => (

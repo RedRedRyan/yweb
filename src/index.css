@@ -80,6 +80,12 @@ body {
     #5e00d7 100%
   );
 }
+@utility left-hug {
+  :left-0 {
+    @apply left-0 rotate-90 top-1/2 -translate-y-1/2;
+  }
+}
+
 
 
 @utility masked-img {
@@ -203,12 +209,19 @@ body {
   #projects{
     @apply flex-center flex-col min-h-dvh p-5 mt-20 relative blackpurple-gradient;
 
+    .right-star {
+        @apply absolute top-20 right-0 size-48;
+    }
     h2 {
-        @apply relative md:text-[8vw] text-6xl text-nowrap leading-none font-nunito text-center text-purple mb-8;
+        @apply relative md:text-[8vw] text-6xl text-nowrap leading-none font-nunito text-center text-purple mb-8 left-hug;
     }
 
     .content {
         @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-40 gap-10;
+    }
+    .project-grid {
+      @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+
     }
 
 
@@ -232,6 +245,9 @@ body {
   }
   #footer {
       @apply w-full py-10 bg-green text-center text-sm text-gray-500;
+      h1 {
+          @apply text-3xl font-arvo mb-5 text-white;
+      }
       .footer-grid {
         @apply grid grid-cols-1 xl:grid-cols-6 gap-5 mb-5 md:px-0 px-5;
 

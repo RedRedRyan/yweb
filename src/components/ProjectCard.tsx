@@ -9,7 +9,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <a
       href={project.link}
-      className="group relative overflow-hidden rounded-lg border border-green border-2  backdrop-blur-2xl transition-all duration-300 hover:border-gray-300 hover:shadow-lg p-2"
+      className="group relative overflow-hidden rounded-lg border border-green border-2  backdrop-blur-3xl transition-all duration-300 hover:border-gray-300 hover:shadow-lg p-2"
     >
       {/* Background gradient on hover */}
       <div className="absolute inset-0 bg-green from-blue-50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
