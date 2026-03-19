@@ -20,16 +20,45 @@ const Projects = () => {
      pin: true
     }
    })
+   const flowerTimeline = gsap.timeline({
+    scrollTrigger: {
+     trigger: '#projects',
+     start,
+     end: 'bottom bottom',
+     scrub: 1.5,
+    }
+   })
    
    maskTimeline
     .to('.will-fade', { opacity: 0, stagger: 0.2, ease: 'power1.inOut', })
     .to('.masked-img', { scale: 1.3, maskPosition: 'center', maskSize: '400%', duration: 1, ease: 'power1.inOut '})
     .to('#masked-content', { opacity: 1, duration: 1, ease: 'power1.inOut'})
     .from(".project-grid", { opacity: 0, stagger: 0.1, ease: 'power1.inOut'})
+    
+      
+
+      flowerTimeline
+      .to(".right-star", {
+        y: 100,
+        x: -500,
+        rotation: -180,
+        ease: "power1.inOut",
+        }, 0)
+      .to(".left-star", {
+        y: 100,
+        x: 500,
+        rotation: 180,
+        ease: "power1.inOut",
+        }, 0)
+
   })
+
+
+
   return (
     <section id='projects'>
-      <img src="/images/star.png" alt="mask" className="right-star" />
+      <img src="/images/flower.png" alt="mask" className="right-star" />
+      <img src="/images/flower.png" alt="mask" className="left-star" />
       <div className="container mx-auto h-full pt-20">
 
 		<h2 className="will-fade">PROJECTS</h2>

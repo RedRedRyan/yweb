@@ -212,8 +212,12 @@ body {
     .right-star {
         @apply absolute top-20 right-0 size-48;
     }
+    .left-star {
+        @apply absolute top-20 left-0 size-48;
+    }
+
     h2 {
-        @apply relative md:text-[8vw] text-6xl text-nowrap leading-none font-nunito text-center text-purple mb-8 left-hug;
+        @apply relative md:text-[8vw] text-6xl text-nowrap leading-none font-nunito text-center text-green mb-8 left-hug;
     }
 
     .content {
