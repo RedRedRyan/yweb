@@ -9,43 +9,34 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
     <a
       href={project.link}
-      className="group relative overflow-hidden rounded-lg border border-green border-2  backdrop-blur-3xl transition-all duration-300 hover:border-gray-300 hover:shadow-lg p-2"
+      className="group relative flex min-h-48 flex-col overflow-hidden rounded-4xl border border-white/8 bg-[#141414] p-7 text-white shadow-purple transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-[#181818] sm:p-8"
     >
-      {/* Background gradient on hover */}
-      <div className="absolute inset-0 bg-green from-blue-50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_42%)] opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col h-1/2">
-        {/* Logo */}
-        <div className="mb-3 h-10 w-10 overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
-          <img
-            src={project.logo}
-            alt={project.title}
-            className="h-full w-full object-cover"
-          />
+      <div className="relative z-10 flex h-full flex-1 flex-col">
+        <div className="flex items-end gap-4">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-black/70 ring-1 ring-white/10">
+            <img
+              src={project.logo}
+              alt={project.title}
+              className="h-9 w-9 object-contain"
+            />
+          </div>
+
+          <div className="min-w-0">
+            <h3 className="truncate text-xl font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-white/90">
+              {project.title}
+            </h3>
+            <div className="mt-2 inline-flex w-fit items-center rounded-full bg-white px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-[#111111]">
+              {project.category}
+            </div>
+          </div>
         </div>
 
-        {/* Category Badge */}
-        <div className="mb-3 inline-flex w-fit">
-          <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-dark">
-            {project.category}
-          </span>
-        </div>
-
-        {/* Title */}
-        <h3 className="mb-2 text-xl font-bold text-green group-hover:text-blue-600 transition-colors">
-          {project.title}
-        </h3>
-
-        {/* Description */}
-        <p className="flex-grow text-sm text-white font-nunito mb-3">
-          {project.description}
-        </p>
-
-        {/* Footer - Link indicator */}
-        <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
-          Learn More
-          <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+        <div className="mt-auto max-w-[28ch] pt-12">
+          <p className="text-lg leading-8 text-white/92 sm:text-[1.35rem]">
+            {project.description}
+          </p>
         </div>
       </div>
     </a>

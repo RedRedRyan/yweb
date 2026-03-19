@@ -107,7 +107,7 @@ export const appList: Project[] = [
   {
     title: "RelyOn POS",
     logo: "/images/relyon.png",
-    description: "A point-of-sale system with real-time inventory management and analytics for small businesses.",
+    description: "A point-of-sale system with real-time inventory analytics .",
     link: "#",
     category: "Fintech"
   },
@@ -121,21 +121,21 @@ export const appList: Project[] = [
   {
     title: "Campus Connect",
     logo: "/images/campusconnect.png",
-    description: "A social platform for university students to connect, share resources, and collaborate on projects.",
+    description: "Connect , collaborate  and share resources on campus.",
     link: "#",
     category: "Social"
   },
   {
     title: "Agent OG",
     logo: "/images/agentog.png",
-    description: "Rent AI agents to automate tasks, generate content, and provide insights across various domains.",
+    description: "Rent an agent and pay with 0g tokens.",
     link: "#",
     category: "AI"
   },
   {
     title: "BlockFridge",
     logo: "/images/blockfridge.png",
-    description: "A decentralized marketplace for buying and selling fresh produce directly from local farmers.",
+    description: "Daily delivery of shopping and grocery.",
     link: "#",
     category: "Fintech"
   }
