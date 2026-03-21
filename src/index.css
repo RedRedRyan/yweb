@@ -221,10 +221,10 @@ body {
     }
 
     .content {
-        @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-40 gap-10;
+        @apply flex md:flex-row flex-col justify-center md:mb-16 md:mt-0 mt-40 gap-10;
     }
     .project-grid {
-      @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+      @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
 
     }
 
@@ -245,6 +245,66 @@ body {
                 @apply text-lg text-center;
             }
         }
+    }
+  }
+
+  #blog {
+    @apply min-h-screen bg-dark;
+  
+    .blog-grid {
+      @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
+  
+      > div {
+        @apply rounded-3xl overflow-hidden relative;
+      }
+  
+      img {
+        @apply object-cover w-full h-full;
+      }
+    }
+  
+    .blog-card {
+      @apply md:col-span-4 backdrop-blur-2xl rounded-3xl p-6 flex flex-col gap-4 border-4 border-purple;
+  
+      .blog-image-container {
+        @apply w-full h-64 rounded-2xl overflow-hidden relative;
+  
+        .blog-image {
+          @apply w-full h-full rounded-2xl transition-opacity duration-300;
+  
+          img {
+            @apply w-full h-full object-cover;
+          }
+        }
+  
+        .blog-overlay {
+          @apply absolute inset-0 bg-purple rounded-2xl p-6 flex flex-col justify-between opacity-0 hover:opacity-100 transition-opacity duration-300;
+  
+          .overlay-content {
+            @apply flex flex-col gap-3;
+  
+            .blog-description {
+              @apply text-green text-sm leading-relaxed;
+            }
+          }
+  
+          .overlay-meta {
+            @apply flex justify-between items-center text-xs text-black;
+  
+            .blog-date {
+              @apply font-medium;
+            }
+          }
+        }
+      }
+  
+      .blog-title {
+        @apply text-xl font-bold text-green;
+      }
+  
+      .blog-author {
+        @apply text-white text-sm font-medium;
+      }
     }
   }
   #footer {

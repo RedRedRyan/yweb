@@ -1,5 +1,4 @@
-import { link } from "fs";
-import { title } from "process";
+
 
 const navLinks = [
     {
@@ -56,6 +55,41 @@ const navLinks = [
     },
    ];
 
+   const mockBlogs = [
+    {
+      id: 1,
+      title: 'Unity Engine',
+      image: '/assets/blog-placeholder.png',
+      description: 'Making games and animated films had been made easier with the latest Unity Engine release',
+      date: 'March 15, 2024',
+      author: 'Sarah Johnson'
+    },
+    {
+      id: 2,
+      title: 'Web Development Trends 2024',
+      image: '/assets/blog-placeholder.png',
+      description: 'Discover the latest trends shaping the future of web development and modern frameworks',
+      date: 'March 12, 2024',
+      author: 'Michael Chen'
+    },
+    {
+      id: 3,
+      title: 'AI Integration Guide',
+      image: '/assets/blog-placeholder.png',
+      description: 'A comprehensive guide to integrating artificial intelligence into your applications',
+      date: 'March 10, 2024',
+      author: 'Emma Davis'
+    },
+    {
+      id: 4,
+      title: 'Cloud Computing Benefits',
+      image: '/assets/blog-placeholder.png',
+      description: 'Explore the benefits of cloud computing and how it can transform your business operations',
+      date: 'March 8, 2024',
+      author: 'David Lee'
+    }
+  ];
+
    const ycrew= [
      {
        title: 'Jude',
@@ -99,14 +133,14 @@ const featureList = [
 export const appList: Project[] = [
   {
     title: "Nairobi Block Exchange",
-    logo: "/images/nbx.png",
+    logo: "/images/nbx.jpg",
     description: "Tokenizing equities and bonds on Hedera's Hashgraph.",
     link: "#",
     category: "Fintech"
   },
   {
     title: "RelyOn POS",
-    logo: "/images/relyon.png",
+    logo: "/images/Relyon.png",
     description: "A point-of-sale system with real-time inventory analytics .",
     link: "#",
     category: "Fintech"
@@ -153,5 +187,6 @@ export{
     navLinks,
     socials,
     ycrew,
-    featureList
+    featureList,
+    mockBlogs
 };

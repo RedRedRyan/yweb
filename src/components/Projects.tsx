@@ -23,9 +23,9 @@ const Projects = () => {
    const flowerTimeline = gsap.timeline({
     scrollTrigger: {
      trigger: '#projects',
-     start,
+     start:'top top',
      end: 'bottom bottom',
-     scrub: 1.5,
+     scrub: 5,
     }
    })
    
@@ -33,7 +33,6 @@ const Projects = () => {
     .to('.will-fade', { opacity: 0, stagger: 0.2, ease: 'power1.inOut', })
     .to('.masked-img', { scale: 1.3, maskPosition: 'center', maskSize: '400%', duration: 1, ease: 'power1.inOut '})
     .to('#masked-content', { opacity: 1, duration: 1, ease: 'power1.inOut'})
-    .from(".project-grid", { opacity: 0, stagger: 0.1, ease: 'power1.inOut'})
     
       
 
@@ -50,6 +49,8 @@ const Projects = () => {
         rotation: 180,
         ease: "power1.inOut",
         }, 0)
+        .from(".project-list div", { opacity: 0, stagger: 0.2, ease: 'power1.inOut'})
+    
 
   })
 
@@ -63,14 +64,20 @@ const Projects = () => {
 
 		<h2 className="will-fade">PROJECTS</h2>
 		
-		<div className="content justify-center">
+		<div className="content">
       
        {/* Projects Grid */}
-     <div className="grid w-full max-w-7xl grid-cols-1 gap-6 auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
+       <div className='project-list'>
+     <div className="project-grid">
           {appList.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
+        </div>
+        
+	<div>
+    
+  </div>
 		</div>
 		
 		<div className="masked-container">
