@@ -8,7 +8,7 @@ import BubbleMenu from './components/BubbleMenu'
 import Projects from './components/Projects'
 import { navLinks } from '../constants'
 import Blog from './components/Blog'
-
+import Contact from './components/Contact'
 gsap.registerPlugin(ScrollTrigger, SplitText, MorphSVGPlugin, ScrambleTextPlugin)
 const App = () => {
 
@@ -31,6 +31,7 @@ const App = () => {
       <About />
       <Projects />
       <Blog />
+      <Contact/>
       <Footer />
     </main>
   )

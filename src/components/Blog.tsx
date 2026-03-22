@@ -17,7 +17,7 @@ const Blog: React.FC = () => {
     <section id='blog'>
       <div className='blog-grid'>
         <div className='md:col-span-8 bg-transparent rounded-3xl p-8 flex items-center justify-center'>
-          <h2 className='text-center text-4xl font-bold text-green md:w-full xl:text-6xl'>
+          <h2 className='text-right text-4xl font-bold text-green md:w-full xl:text-6xl'>
             Our <br /> Blog
           </h2>
         </div>

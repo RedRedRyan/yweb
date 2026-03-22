@@ -307,6 +307,89 @@ body {
       }
     }
   }
+  #contact {
+    @apply min-h-screen py-28 2xl:px-0 px-5 mx-auto relative bg-purple;
+
+    .right-flower {
+      @apply absolute z-10 right-0 md:w-fit size-36;
+      background: linear-gradient(135deg, rgba(219, 112, 147, 0.1), rgba(255, 182, 193, 0.1));
+      border-radius: 50%;
+    }
+    
+  }
+  
+  /* Main Container */
+  .contact-container {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start relative z-20;
+  }
+  
+  /* Image Wrapper - Responsive Positioning */
+  .contact-image-wrapper {
+    @apply order-2 md:order-1 flex items-center justify-center;
+  }
+  
+  .contact-image {
+    @apply w-full h-auto max-w-sm md:max-w-none object-cover;
+    border-radius: 12px;
+  }
+  
+  /* Form Wrapper */
+  .contact-form-wrapper {
+    @apply order-1 md:order-2 flex flex-col justify-start;
+  }
+  
+  /* Contact Header */
+  .contact-header {
+    @apply mb-8;
+  }
+  
+  .contact-header h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight;
+    font-family: 'Arvo', serif;
+  }
+  
+  .contact-subtitle {
+    @apply text-base md:text-lg text-purple;
+  }
+  
+  /* Form Styles */
+  .inquiry-form {
+    @apply flex flex-col gap-6;
+  }
+  
+  .form-group {
+    @apply flex flex-col gap-2;
+  }
+  
+  .form-group label {
+    @apply text-sm font-semibold text-white;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    @apply w-full px-4 py-3 rounded-lg border border-green bg-black text-white placeholder-purple transition-all;
+    @apply focus:outline-none focus:bg-purple focus:border-transparent;
+  }
+  
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    @apply text-purple;
+  }
+  
+  /* Form Row for Side-by-Side Fields */
+  .form-row {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+  
+  /* Submit Button */
+  .submit-button {
+    @apply w-full px-6 py-3 rounded-lg bg-black text-green font-semibold transition-all;
+    @apply hover:opacity-90 active:scale-95;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply mt-2;
+  }
+  
+
   #footer {
       @apply w-full py-10 bg-green text-center text-sm text-gray-500;
       h1 {
