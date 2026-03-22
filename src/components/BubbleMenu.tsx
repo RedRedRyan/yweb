@@ -38,28 +38,28 @@ const DEFAULT_ITEMS: MenuItem[] = [
   },
   {
     label: 'about',
-    href: '#',
+    href: '#about',
     ariaLabel: 'About',
     rotation: 8,
     hoverStyles: { bgColor: '#10b981', textColor: '#ffffff' }
   },
   {
     label: 'projects',
-    href: '#',
+    href: '#projects',
     ariaLabel: 'Documentation',
     rotation: 8,
     hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
   },
   {
     label: 'blog',
-    href: '#',
+    href: '#blog',
     ariaLabel: 'Blog',
     rotation: 8,
     hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
   },
   {
     label: 'contact',
-    href: '#',
+    href: '#contact',
     ariaLabel: 'Contact',
     rotation: -8,
     hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }

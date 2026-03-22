@@ -210,17 +210,17 @@ body {
     @apply flex-center flex-col min-h-dvh p-5 mt-20 relative blackpurple-gradient;
 
     .right-star {
-        @apply absolute top-20 right-0 size-48;
+        @apply absolute top-20 left-1/2 size-48;
     }
     .mid-star {
-      @apply absolute right-1/2 size-48;
+      @apply absolute top-0 justify-center size-48;
     }
     .left-star {
-        @apply absolute top-20 left-0 size-48;
+        @apply absolute top-20 right-1/2 size-48;
     }
 
     h2 {
-        @apply relative md:text-[8vw] text-6xl text-nowrap leading-none font-nunito text-center text-green mb-8 left-hug;
+        @apply relative md:text-[8vw] text-6xl text-nowrap leading-none font-nunito text-center text-green mb-8;
     }
 
     .content {
