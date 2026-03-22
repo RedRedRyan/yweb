@@ -212,6 +212,9 @@ body {
     .right-star {
         @apply absolute top-20 right-0 size-48;
     }
+    .mid-star {
+      @apply absolute right-1/2 size-48;
+    }
     .left-star {
         @apply absolute top-20 left-0 size-48;
     }
@@ -315,10 +318,7 @@ body {
       background: linear-gradient(135deg, rgba(219, 112, 147, 0.1), rgba(255, 182, 193, 0.1));
       border-radius: 50%;
     }
-    
-  }
-  
-  /* Main Container */
+      /* Main Container */
   .contact-container {
     @apply grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start relative z-20;
   }
@@ -388,6 +388,10 @@ body {
     @apply disabled:opacity-50 disabled:cursor-not-allowed;
     @apply mt-2;
   }
+    
+  }
+  
+
   
 
   #footer {

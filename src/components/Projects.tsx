@@ -23,8 +23,8 @@ const Projects = () => {
    const flowerTimeline = gsap.timeline({
     scrollTrigger: {
      trigger: '#projects',
-     start:'top top',
-     end: 'bottom bottom',
+     start:'top center',
+     end: 'bottom center',
      scrub: 5,
     }
    })
@@ -59,6 +59,7 @@ const Projects = () => {
   return (
     <section id='projects'>
       <img src="/images/flower.png" alt="mask" className="right-star" />
+      <img src='/image/flower.png' className='mid-star'/>
       <img src="/images/flower.png" alt="mask" className="left-star" />
       <div className="container mx-auto h-full pt-20">
 
