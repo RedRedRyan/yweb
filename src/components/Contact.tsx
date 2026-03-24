@@ -53,18 +53,23 @@ export default function Contact() {
         {/* Left Column - Image */}
         <div className="contact-image-wrapper">
           <img
-            src="/images/flower.png"
+            src="/images/touch.png"
             alt="Contact section decoration"
             className="contact-image"
           />
+          <div className='absolute'>
+          
+          
+            <h2 id="AnyText" className="text-8xl md:text-7xl relative text-gradient justify-center">Get in <br/>Touch
+            </h2>
+            
+          
+            </div>
         </div>
 
         {/* Right Column - Form */}
         <div className="contact-form-wrapper">
-          <div className="contact-header">
-            <h1>Contact Us</h1>
-            <p className="contact-subtitle">Hit us up for gigs and collabs.</p>
-          </div>
+          
 
           <form onSubmit={handleSubmit} className="inquiry-form">
             {/* Email Field */}

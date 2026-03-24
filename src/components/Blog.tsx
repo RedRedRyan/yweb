@@ -1,5 +1,7 @@
 import React from 'react'
 import { mockBlogs } from '../../constants'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 type BlogPost = {
   id: string | number
@@ -11,12 +13,32 @@ type BlogPost = {
 }
 
 const Blog: React.FC = () => {
+  useGSAP(() => {
+    
+    
+
+    const blogTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#blog',
+        start: 'top 80%',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    })
+
+
+  })
  
 
   return (
     <section id='blog'>
       <div className='blog-grid'>
         <div className='md:col-span-8 bg-transparent rounded-3xl p-8 flex items-center justify-center'>
+        <div id="smooth-wrapper">
+		<div id="smooth-content">
+		
+		</div>
+	</div>
           <h2 className='text-right text-4xl font-bold text-green md:w-full xl:text-6xl'>
             Our <br /> Blog
           </h2>

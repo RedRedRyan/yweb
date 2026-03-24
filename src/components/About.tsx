@@ -1,15 +1,29 @@
 import gsap from 'gsap';
-import { SplitText} from 'gsap/all'
+import { SplitText, DrawSVGPlugin} from 'gsap/all'
 import { useGSAP } from '@gsap/react'
 import ScrollReveal from './ScrollReveal';
 import Carousel from './Carousel';
+import { techLogos } from '../../constants/index';
+import LogoLoop from './LogoLoop';
 
 const About = () => {
+
+
  useGSAP(() => {
 	const titleSplit = SplitText.create('#about h2', {
 	 type: 'words'
 	})
 	
+	const artTimeline = gsap.timeline({
+		repeat: -1,
+		defaults: { ease: 'power1.inOut', duration: 3 },
+	})
+	artTimeline
+	.set('#svg-stage', { opacity: 1 })
+  	.from('path', { drawSVG:'0% 0%' })
+  	.to('path', { drawSVG:'100% 100%' })
+	
+
 	const scrollTimeline = gsap.timeline({
 	 scrollTrigger: {
 		trigger: '#about',
@@ -29,11 +43,29 @@ const About = () => {
  return (
 
 	<div id="about">
-		
+				<svg
+					id="svg-stage"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="-1 -1 103 103"
+					fill="none"
+					strokeWidth="2.2"
+					opacity={0}
+					>
+					<defs>
+						<linearGradient id="grad-1" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+						<stop offset="0.2" stopColor="rgb(255, 135, 9)" />
+						<stop offset="0.8" stopColor="rgb(247, 189, 248)" />
+						</linearGradient>
+					</defs>
+					<path stroke="url(#grad-1)" d="M50.5 50.5h50v50s-19.2 1.3-37.2-16.7S56 35.4 35.5 15.5C18.5-1 .5.5.5.5v50h50s25.6-.6 38-18 12-32 12-32h-50v100H.5S.2 80.7 11.8 68.2 40 49.7 50.5 50.5Z" />
+				</svg>
 		<div className='flex items-center justify-between mb-10 gap-5  p-5 flex-col md:flex-row'>
 
 		<div className=''>
-						<h2 className='text-4xl font-bold text-purple md:w-full xl:text-6xl'>About <br/> Us</h2>
+			
+						<h2 className='text-4xl font-bold text-green md:w-full xl:text-6xl'>About <br/> Us</h2>
+
+								
 		</div>
 
 		<div className='xl:w-2/3  md:w-full' >
@@ -67,7 +99,23 @@ const About = () => {
 			/>
 
 		</div>
-		<div className='md:col-span-9 bg-purple'>
+		<div className='md:col-span-9 bg-white'>
+			<h1 className='text-black text-6xl font-arvo text-center py-4'>Tools</h1>
+		<div style={{ height: '200px', position: 'relative', overflow: 'hidden'}} >
+      {/* Basic horizontal loop */}
+      <LogoLoop
+        logos={techLogos}
+        speed={100}
+        direction="left"
+        logoHeight={80}
+        gap={60}
+        hoverSpeed={0}
+        scaleOnHover
+        fadeOut
+        fadeOutColor="white"
+        ariaLabel="Technology partners"
+      />
+	  </div>
 
 		</div>
 		

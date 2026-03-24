@@ -37,6 +37,60 @@ const navLinks = [
       hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
     }
   ];
+  const techLogos = [
+		{
+			src: "/images/tools/react.png",
+			alt: "React",
+      href: "https://reactjs.org/"
+		},
+    {
+      src: "/images/tools/nextjs.png",
+      alt: "Next.js",
+      href: "https://nextjs.org/"
+    },
+    {
+      src: "/images/tools/aftereffects.png",
+      alt: "After Effects",
+      href: "https://www.adobe.com/products/aftereffects.html"
+    },
+    {
+      src: "/images/tools/unity.png",
+      alt: "Unity",
+      href: "https://unity.com/"
+    },
+    {
+      src: "/images/tools/blender.png",
+      alt: "Blender",
+      href: "https://www.blender.org/"
+    },
+    {
+      src: "/images/tools/figma.png",
+      alt: "Figma",
+      href: "https://www.figma.com/"
+    },
+     {
+       src: "/images/tools/photoshop.png",
+        alt: "Photoshop",
+        href: "https://www.adobe.com/products/photoshop.html"
+     },
+     {
+      src: "/images/tools/r.png",
+      alt: "R",
+      href: "https://www.r-project.org/"
+     },
+     {  
+      src: "/images/tools/python.png",
+      alt: "Python",
+      href: "https://www.python.org/"
+     },
+     {
+      src: "/images/tools/solidity.png",
+      alt: "Solidity",
+      href: "https://docs.soliditylang.org/"
+     }
+
+    
+	];
   const socials = [
     {
        name: "Youtube",
@@ -188,5 +242,6 @@ export{
     socials,
     ycrew,
     featureList,
-    mockBlogs
+    mockBlogs,
+    techLogos
 };

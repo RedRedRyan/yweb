@@ -76,7 +76,7 @@ body {
   background: linear-gradient(
     180deg,
     #000 0%,
-    #000 22%,
+    #000 88%,
     #5e00d7 100%
   );
 }
@@ -165,12 +165,20 @@ body {
   #about {
     @apply min-h-screen py-28 2xl:px-0 px-5 container mx-auto;
 
+    #svg-stage {
+      width:60%;
+      max-width:500px;
+      overflow:visible;
+      @apply absolute;
+    }
+
     .content {
         @apply grid grid-cols-1 lg:grid-cols-12 gap-5;
 
         h2 {
             @apply text-5xl md:text-6xl font-arvo max-w-lg;
         }
+
 
         .sub-content {
             @apply md:col-span-4 space-y-5 flex flex-col justify-between;
@@ -207,7 +215,7 @@ body {
 
 }
   #projects{
-    @apply flex-center flex-col min-h-dvh p-5 mt-20 relative blackpurple-gradient;
+    @apply flex-center flex-col min-h-dvh p-5 mt-20 relative bg-transparent;
 
     .right-star {
         @apply absolute top-20 left-1/2 size-48;
@@ -311,7 +319,7 @@ body {
     }
   }
   #contact {
-    @apply min-h-screen py-28 2xl:px-0 px-5 mx-auto relative bg-purple;
+    @apply min-h-screen py-28 2xl:px-0 px-5 mx-auto relative blackpurple-gradient;
 
     .right-flower {
       @apply absolute z-10 right-0 md:w-fit size-36;

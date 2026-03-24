@@ -14,9 +14,10 @@ const Projects = () => {
    const maskTimeline = gsap.timeline({
     scrollTrigger: {
      trigger: '#projects',
-     start: "top top",
+     start: start,
      end: 'bottom top',
      scrub: 1.5,
+     pin: true,
     }
    })
    const flowerTimeline = gsap.timeline({
@@ -25,12 +26,14 @@ const Projects = () => {
      start:'top center',
      end: 'bottom top',
      scrub: 1,
-     pin: true,
+      snap: {
+        snapTo: 0.5, // Snap to the closest 0.5 increment (0, 0.5, 1)
+      }
     }
    })
    
    maskTimeline
-    .to('.will-fade', { opacity: 0, stagger: 0.2, ease: 'power1.inOut',y: -300, duration: 3 }, 0)
+    .to('.will-fade', { opacity: 0, stagger: 0.2, ease: 'power1.inOut',y: -300, duration: 2 }, 0)
     .to('.masked-img', { scale: 1.3, maskPosition: 'center', maskSize: '400%', duration: 1, ease: 'power1.inOut '})
     .to('#masked-content', { opacity: 1, duration: 1, ease: 'power1.inOut'})
     .to(".project-section", { opacity: 1, duration: 3, ease: 'power1.inOut', y:-200 }, 0)
@@ -47,7 +50,7 @@ const Projects = () => {
         
         }, 0)
       .to(".left-star", {
-        y: -480,
+        y: 280,
         x: 0,
         rotation: 180,
         ease: "power1.inOut",
@@ -92,13 +95,16 @@ const Projects = () => {
 		</div>
 		
 		<div className="masked-container">
-		 <h2 className="will-fade">Made  Y</h2>
+		 <h2 className="will-fade" id='build'>Made  Y</h2>
 		 <div id="masked-content">
+      <h2> made by us</h2>
+      </div>
+      <div  className='bottom-0 text-gradient text-4xl'>
+        <p>Build It With Us</p>
+        </div>
       
-      
-      <p>Build It With Us</p>
         
-		 </div>
+		 
 		</div>
 	 </div>
 
