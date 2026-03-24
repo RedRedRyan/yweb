@@ -120,7 +120,7 @@ const navLinks = [
     },
     {
       id: 2,
-      title: 'Web Development Trends 2024',
+      title: 'Web Dev Trends',
       image: '/assets/blog-placeholder.png',
       description: 'Discover the latest trends shaping the future of web development and modern frameworks',
       date: 'March 12, 2024',

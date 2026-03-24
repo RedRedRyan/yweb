@@ -26,26 +26,37 @@ const Blog: React.FC = () => {
       },
     })
 
+    gsap.to(".box", {
+      keyframes: {
+        y: [0, 180, 60, 10, 0],
+        ease: "none", // <- ease across the entire set of keyframes (defaults to the one defined in the tween, or "none" if one isn't defined there)
+        easeEach: "bounce", // <- ease between each keyframe (defaults to "power1.inOut")
 
+      },
+      rotate: 360,
+      ease: "elastic", // <- the "normal" part of the tween. In this case, it affects "rotate" because it's outside the keyframes
+      duration: 5,
+      stagger: 0.2,
+      repeat: -1,
+    });
+    
   })
  
 
   return (
     <section id='blog'>
       <div className='blog-grid'>
-        <div className='md:col-span-8 bg-transparent rounded-3xl p-8 flex items-center justify-center'>
-        <div id="smooth-wrapper">
-		<div id="smooth-content">
-		
-		</div>
-	</div>
-          <h2 className='text-right text-4xl font-bold text-green md:w-full xl:text-6xl'>
-            Our <br /> Blog
-          </h2>
+        <div className='md:col-span-4 bg-dark rounded-3xl p-8 flex items-center justify-center'>
+            <div className="box"><h2 className='text-center mt-3 text-4xl font-bold text-white md:w-full xl:text-6xl'>
+                Our
+              </h2></div>
+            <div className="box"><h2 className='text-center mt-3 text-4xl font-bold text-white md:w-full xl:text-6xl'>
+                Blog
+              </h2></div>  
         </div>
 
         {mockBlogs.map((blog: BlogPost) => (
-          <div key={blog.id} className='blog-card'>
+          <div key={blog.id} className='blog-card md:col-span-2'>
             
             <h3 className='blog-title'>{blog.title}</h3>
             <span className='blog-author'>By {blog.author}</span>

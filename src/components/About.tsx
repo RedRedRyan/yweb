@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { SplitText, DrawSVGPlugin} from 'gsap/all'
+import { SplitText} from 'gsap/all'
 import { useGSAP } from '@gsap/react'
 import ScrollReveal from './ScrollReveal';
 import Carousel from './Carousel';
@@ -15,14 +15,26 @@ const About = () => {
 	})
 	
 	const artTimeline = gsap.timeline({
+		trigger: "#about",
+		start: 'top center',
 		repeat: -1,
-		defaults: { ease: 'power1.inOut', duration: 3 },
+		yoyo: true,
+		defaults: { ease: 'power1.inOut', duration: 4 },
 	})
 	artTimeline
 	.set('#svg-stage', { opacity: 1 })
   	.from('path', { drawSVG:'0% 0%' })
   	.to('path', { drawSVG:'100% 100%' })
 	
+	const riseTimeline = gsap.timeline({
+		scrollTrigger: {
+		trigger: '#about',
+		scrub: true,
+		}
+	})
+	riseTimeline
+	.to(".about-header", { y: -200, ease: 'sine.inOut'}, 0)
+	.fromTo("#svg-stage", { y: 200 }, { y: -400, ease: 'sine.inOut'}, 0)
 
 	const scrollTimeline = gsap.timeline({
 	 scrollTrigger: {
@@ -50,11 +62,12 @@ const About = () => {
 					fill="none"
 					strokeWidth="2.2"
 					opacity={0}
+					className='about-art'
 					>
 					<defs>
 						<linearGradient id="grad-1" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-						<stop offset="0.2" stopColor="rgb(255, 135, 9)" />
-						<stop offset="0.8" stopColor="rgb(247, 189, 248)" />
+						<stop offset="0.2" stopColor="#2C026B" />
+						<stop offset="0.8" stopColor="#5e00d7" />
 						</linearGradient>
 					</defs>
 					<path stroke="url(#grad-1)" d="M50.5 50.5h50v50s-19.2 1.3-37.2-16.7S56 35.4 35.5 15.5C18.5-1 .5.5.5.5v50h50s25.6-.6 38-18 12-32 12-32h-50v100H.5S.2 80.7 11.8 68.2 40 49.7 50.5 50.5Z" />
@@ -63,7 +76,7 @@ const About = () => {
 
 		<div className=''>
 			
-						<h2 className='text-4xl font-bold text-green md:w-full xl:text-6xl'>About <br/> Us</h2>
+						<h2 className='about-header'>About <br/> Us</h2>
 
 								
 		</div>

@@ -1,5 +1,5 @@
 import gsap from 'gsap'
-import { MorphSVGPlugin, ScrambleTextPlugin, ScrollTrigger, SplitText, ScrollSmoother, DrawSVGPlugin } from 'gsap/all'
+import { MorphSVGPlugin, ScrambleTextPlugin, ScrollTrigger, SplitText, ScrollSmoother, DrawSVGPlugin, Flip } from 'gsap/all'
 // import Navbar from './components/NavBar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
@@ -9,7 +9,7 @@ import Projects from './components/Projects'
 import { navLinks } from '../constants'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
-gsap.registerPlugin(ScrollTrigger, SplitText, MorphSVGPlugin, ScrambleTextPlugin, ScrollSmoother, DrawSVGPlugin)
+gsap.registerPlugin(ScrollTrigger, SplitText, MorphSVGPlugin, ScrambleTextPlugin, ScrollSmoother, DrawSVGPlugin, Flip)
 const App = () => {
 
   

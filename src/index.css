@@ -77,7 +77,7 @@ body {
     180deg,
     #000 0%,
     #000 88%,
-    #5e00d7 100%
+    #2c026b 100%
   );
 }
 @utility left-hug {
@@ -166,10 +166,10 @@ body {
     @apply min-h-screen py-28 2xl:px-0 px-5 container mx-auto;
 
     #svg-stage {
-      width:60%;
-      max-width:500px;
-      overflow:visible;
-      @apply absolute;
+      @apply absolute justify-center overflow-visible size-36 left-0;
+    }
+    .about-header {
+        @apply text-4xl font-bold text-green md:w-full xl:text-6xl;
     }
 
     .content {
@@ -260,22 +260,22 @@ body {
   }
 
   #blog {
-    @apply min-h-screen bg-dark;
+    @apply min-h-screen ;
+
+    .box {
+      @apply rounded-3xl border-4 rounded-full w-48 h-20 ml-6 relative;
+    }
   
     .blog-grid {
-      @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
+      @apply grid grid-cols-1 xl:grid-cols-6 gap-5 mb-5 md:px-0 px-5;
   
       > div {
         @apply rounded-3xl overflow-hidden relative;
       }
-  
-      img {
-        @apply object-cover w-full h-full;
-      }
     }
   
     .blog-card {
-      @apply md:col-span-4 backdrop-blur-2xl rounded-3xl p-6 flex flex-col gap-4 border-4 border-purple;
+      @apply  bg-dark rounded-3xl p-6 flex flex-col gap-4 border-4 border-purple;
   
       .blog-image-container {
         @apply w-full h-64 rounded-2xl overflow-hidden relative;
@@ -319,84 +319,123 @@ body {
     }
   }
   #contact {
-    @apply min-h-screen py-28 2xl:px-0 px-5 mx-auto relative blackpurple-gradient;
-
+    @apply min-h-screen py-28 2xl:px-0 px-5 mx-auto relative bg-purple;
+  
     .right-flower {
       @apply absolute z-10 right-0 md:w-fit size-36;
       background: linear-gradient(135deg, rgba(219, 112, 147, 0.1), rgba(255, 182, 193, 0.1));
       border-radius: 50%;
     }
-      /* Main Container */
-  .contact-container {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start relative z-20;
-  }
   
-  /* Image Wrapper - Responsive Positioning */
-  .contact-image-wrapper {
-    @apply order-2 md:order-1 flex items-center justify-center;
-  }
+    .contact-container {
+      @apply grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-16 relative z-20 justify-center;
+    }
   
-  .contact-image {
-    @apply w-full h-auto max-w-sm md:max-w-none object-cover;
-    border-radius: 12px;
-  }
+    /* ── Product Grid ─────────────────────────────── */
+    .contact-image-wrapper {
+      @apply order-2 md:order-1 flex items-center justify-center w-full;
+    }
   
-  /* Form Wrapper */
-  .contact-form-wrapper {
-    @apply order-1 md:order-2 flex flex-col justify-start;
-  }
+    /* Aspect-ratio trick — keeps the grid at ~3:4 */
+    .image-container {
+      @apply relative w-2/3 md:w-full max-w-xs md:max-w-sm;
+    }
+    .image-container::before {
+      float: left;
+      padding-top: 133.77%;   /* 4:3 portrait ratio */
+      content: "";
+    }
+    .image-container::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
   
-  /* Contact Header */
-  .contact-header {
-    @apply mb-8;
-  }
+    .images {
+      @apply absolute inset-0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 8px;
+      grid-template-areas:
+        "img-1 img-1 img-1"
+        "img-1 img-1 img-1"
+        "img-1 img-1 img-1"
+        "img-2 img-3 img-4";
+    }
   
-  .contact-header h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 leading-tight;
-    font-family: 'Arvo', serif;
-  }
+    .product {
+      background-size: 75%;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      will-change: transform;
+      background-color: transparent;
+      border-radius: 8px;
+      transition: border-color 0.2s;
   
-  .contact-subtitle {
-    @apply text-base md:text-lg text-purple;
-  }
+      &:hover {
+        border-color: rgba(255, 252, 225, 0.7);
+      }
+    }
   
-  /* Form Styles */
-  .inquiry-form {
-    @apply flex flex-col gap-6;
-  }
+    .product[data-grid="img-1"] {
+      grid-area: img-1;
+      z-index: 1;
+      cursor: default;
+      border-radius: 10px;
+    }
+    .product[data-grid="img-2"] { grid-area: img-2; }
+    .product[data-grid="img-3"] { grid-area: img-3; }
+    .product[data-grid="img-4"] { grid-area: img-4; }
   
-  .form-group {
-    @apply flex flex-col gap-2;
-  }
   
-  .form-group label {
-    @apply text-sm font-semibold text-white;
-  }
   
-  .form-group input,
-  .form-group textarea {
-    @apply w-full px-4 py-3 rounded-lg border border-green bg-black text-white placeholder-purple transition-all;
-    @apply focus:outline-none focus:bg-purple focus:border-transparent;
-  }
+    /* ── Form ─────────────────────────────────────── */
+    .contact-form-wrapper {
+      @apply order-1 md:order-2 flex flex-col justify-start;
+    }
   
-  .form-group input::placeholder,
-  .form-group textarea::placeholder {
-    @apply text-purple;
-  }
+    .contact-header h1 {
+      @apply text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight;
+      font-family: 'Arvo', serif;
+    }
+    .contact-subtitle {
+      @apply text-base md:text-lg text-purple;
+    }
   
-  /* Form Row for Side-by-Side Fields */
-  .form-row {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
-  }
+    .inquiry-form {
+      @apply flex flex-col gap-6;
+    }
   
-  /* Submit Button */
-  .submit-button {
-    @apply w-full px-6 py-3 rounded-lg bg-black text-green font-semibold transition-all;
-    @apply hover:opacity-90 active:scale-95;
-    @apply disabled:opacity-50 disabled:cursor-not-allowed;
-    @apply mt-2;
-  }
-    
+    .form-group {
+      @apply flex flex-col gap-2;
+    }
+    .form-group label {
+      @apply text-sm font-semibold text-white;
+    }
+    .form-group input,
+    .form-group textarea {
+      @apply w-full px-4 py-3 rounded-lg border border-white border-3 bg-dark text-white placeholder-purple transition-all;
+      @apply focus:outline-none focus:bg-black focus:border-transparent;
+    }
+  
+    .form-row {
+      @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+    }
+  
+    .submit-button {
+      @apply w-48 px-6 py-3 rounded-lg bg-green text-white font-semibold transition-all mt-2;
+      @apply hover:opacity-90 active:scale-95;
+      @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+  
+    @media (max-width: 768px) {
+      .image-container {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
   }
   
 
