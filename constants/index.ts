@@ -112,35 +112,41 @@ const navLinks = [
    const mockBlogs = [
     {
       id: 1,
-      title: 'Unity Engine',
-      image: '/assets/blog-placeholder.png',
-      description: 'Making games and animated films had been made easier with the latest Unity Engine release',
+      title: 'Building Agent 0g',
+      image: '/images/0g.webp',
+      description: 'How I created an AI agent that can perform tasks and interact with users. From concept to code, I share the journey of building Agent 0g and its potential applications in various industries.',
       date: 'March 15, 2024',
-      author: 'Sarah Johnson'
+      author: 'Jude',
+      link: "https://x.com/i/status/1986054121862873144"
     },
     {
       id: 2,
-      title: 'Web Dev Trends',
-      image: '/assets/blog-placeholder.png',
-      description: 'Discover the latest trends shaping the future of web development and modern frameworks',
-      date: 'March 12, 2024',
-      author: 'Michael Chen'
+      title: 'Coming Soon',
+      image: '/images/blog.png',
+      description: 'Discover the latest blogs and insights from our team. Stay tuned for exciting updates and in-depth articles on technology, innovation, and more.',
+      date: 'Estimated release: April 2024',
+      author: 'Ystudios team',
+      link: "#blog"
     },
     {
       id: 3,
-      title: 'AI Integration Guide',
-      image: '/assets/blog-placeholder.png',
-      description: 'A comprehensive guide to integrating artificial intelligence into your applications',
-      date: 'March 10, 2024',
-      author: 'Emma Davis'
+      title: 'Coming Soon',
+      image: '/images/blog.png',
+      description: 'Discover the latest blogs and insights from our team. Stay tuned for exciting updates and in-depth articles on technology, innovation, and more.',
+      date: 'Estimated release: April 2024',
+      author: 'Ystudios team',
+      link: "#blog"
+      
+  
     },
     {
       id: 4,
-      title: 'Cloud Computing Benefits',
-      image: '/assets/blog-placeholder.png',
-      description: 'Explore the benefits of cloud computing and how it can transform your business operations',
-      date: 'March 8, 2024',
-      author: 'David Lee'
+      title: 'Coming Soon',
+      image: '/images/blog.png',
+      description: 'Discover the latest blogs and insights from our team. Stay tuned for exciting updates and in-depth articles on technology, innovation, and more.',
+      date: 'Estimated release: April 2024',
+      author: 'Ystudios team',
+      link: "#blog"
     }
   ];
 

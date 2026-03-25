@@ -10,6 +10,7 @@ type BlogPost = {
   image: string
   description: string
   date: string
+  link: string
 }
 
 const Blog: React.FC = () => {
@@ -46,7 +47,7 @@ const Blog: React.FC = () => {
   return (
     <section id='blog'>
       <div className='blog-grid'>
-        <div className='md:col-span-4 bg-dark rounded-3xl p-8 flex items-center justify-center'>
+        <div className='md:col-span-4  rounded-3xl p-8 flex items-center justify-center'>
             <div className="box"><h2 className='text-center mt-3 text-4xl font-bold text-white md:w-full xl:text-6xl'>
                 Our
               </h2></div>
@@ -56,7 +57,7 @@ const Blog: React.FC = () => {
         </div>
 
         {mockBlogs.map((blog: BlogPost) => (
-          <div key={blog.id} className='blog-card md:col-span-2'>
+          <a key={blog.id} className='blog-card md:col-span-2' href={blog.link}>
             
             <h3 className='blog-title'>{blog.title}</h3>
             <span className='blog-author'>By {blog.author}</span>
@@ -73,7 +74,7 @@ const Blog: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

@@ -10,7 +10,7 @@ export interface CarouselItem {
   title: string;
   description: string;
   id: number;
-  icon: React.ReactNode;
+  icon: string;
 }
 
 export interface CarouselProps {
@@ -28,7 +28,7 @@ const DEFAULT_ITEMS: CarouselItem[] = [
     title: 'Jude',
     description: 'Software Engineer. AI,IoT.',
     id: 1,
-    icon: "/images/jude.png",
+    icon: "/images/team/jude.png",
     link: 'https://www.linkedin.com/in/jude-tulel-9b1a4b1a0/',
     bgColor: '#060010'
   },
@@ -36,7 +36,7 @@ const DEFAULT_ITEMS: CarouselItem[] = [
     title: 'Costo',
     description: 'Environmental Artist. 3D Modeling and Animations.',
     id: 2,
-    icon: "/images/costo.png",
+    icon: "/images/team/costo.png",
     link: 'https://www.linkedin.com/in/costo-odhiambo-9b1a4b1a0/',
       bgColor: '#060010'
   },
@@ -44,7 +44,7 @@ const DEFAULT_ITEMS: CarouselItem[] = [
     title: 'Koiya',
     description: 'Motion Designer. Audio and Visual Editor',
     id: 3,
-    icon: "/images/koiya.png",
+    icon: "/images/team/koiya.png",
      link: 'https://www.linkedin.com/in/koiya-odhiambo-9b1a4b1a0/',
       bgColor: '#060010'
   },
@@ -52,7 +52,7 @@ const DEFAULT_ITEMS: CarouselItem[] = [
     title: 'Ryan',
     description: 'UI/UX Artist. Unity Game Developer.',
     id: 4,
-    icon: "/images/redryan.png",
+    icon: "/images/team/ryan.jpg",
      link: 'https://www.linkedin.com/in/redryan-odhiambo-9b1a4b1a0/',
       bgColor: '#060010'
   }
@@ -84,7 +84,7 @@ function CarouselItem({ item, index, itemWidth, round, trackItemOffset, x, trans
       className={`relative shrink-0 flex flex-col ${
         round
           ? 'items-center justify-center text-center bg-[#060010] border-0'
-          : 'items-start justify-between bg-[#222] border border-[#222] rounded-[12px]'
+          : 'items-start justify-between bg-dark border border-black rounded-[12px]'
       } overflow-hidden cursor-grab active:cursor-grabbing`}
       style={{
         width: itemWidth,
@@ -94,10 +94,12 @@ function CarouselItem({ item, index, itemWidth, round, trackItemOffset, x, trans
       }}
       transition={transition}
     >
-      <div className={`${round ? 'p-0 m-0' : 'mb-4 p-5'}`}>
-        <span className="flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#060010]">
-          {item.icon}
-        </span>
+      <div className="">
+      <img
+      src={item.icon}
+      alt={item.title}
+      className="size-24"
+    />
       </div>
       <div className="p-5">
         <div className="mb-1 font-black text-lg text-white">{item.title}</div>

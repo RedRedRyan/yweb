@@ -112,20 +112,20 @@ const About = () => {
 			/>
 
 		</div>
-		<div className='md:col-span-9 bg-white'>
-			<h1 className='text-black text-6xl font-arvo text-center py-4'>Tools</h1>
+		<div className='md:col-span-9 bg-dark'>
+			<h1 className='text-green text-6xl font-arvo text-center py-4'>Tools</h1>
 		<div style={{ height: '200px', position: 'relative', overflow: 'hidden'}} >
       {/* Basic horizontal loop */}
       <LogoLoop
         logos={techLogos}
         speed={100}
-        direction="left"
+        direction="right"
         logoHeight={80}
         gap={60}
         hoverSpeed={0}
         scaleOnHover
         fadeOut
-        fadeOutColor="white"
+        fadeOutColor="#2c026b"
         ariaLabel="Technology partners"
       />
 	  </div>

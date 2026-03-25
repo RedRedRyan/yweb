@@ -126,9 +126,9 @@ body {
       }
     
       
-      .left-leaf {
-        @apply absolute left-1/2  bottom-20 md:w-fit w-1/3 size-48;
-    }
+      .left-button {
+        @apply absolute left-1/2 -translate-x-1/2 bottom-20 md:w-fit inline-block rounded-full bg-purple text-green px-4 py-2 text-xl font-medium mb-8 z-50;
+      }
 
     .right-leaf {
         @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/2 md:w-fit w-24 size-48 ;
@@ -153,9 +153,7 @@ body {
                   @apply max-w-xl text-4xl;
               }
 
-              a {
-                  @apply font-semibold opacity-80 2xl:text-start text-center hover:text-purple;
-              }
+              
           }
       }
   }
@@ -267,7 +265,7 @@ body {
     }
   
     .blog-grid {
-      @apply grid grid-cols-1 xl:grid-cols-6 gap-5 mb-5 md:px-0 px-5;
+      @apply grid grid-cols-1 md:grid-cols-6 gap-5 mb-5 md:px-0 px-5;
   
       > div {
         @apply rounded-3xl overflow-hidden relative;
