@@ -429,6 +429,15 @@ body {
       @apply hover:opacity-90 active:scale-95;
       @apply disabled:opacity-50 disabled:cursor-not-allowed;
     }
+    
+    
+    .submit-button--loading {
+      @apply opacity-75 cursor-wait;
+    }
+    
+    .submit-button--sent {
+      @apply bg-green opacity-100; 
+    }
   
     @media (max-width: 768px) {
       .image-container {

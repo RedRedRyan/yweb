@@ -30,7 +30,6 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // All fields must be non-empty to enable the submit button
   const isFormComplete = Object.values(formData).every((v) => v.trim() !== '');
 
   function Submit(e: React.FormEvent<HTMLFormElement>) {
@@ -48,14 +47,11 @@ export default function Contact() {
         body: data,
       }
     )
-      // ✅ App Script returns plain text, not JSON — use .text() not .json()
       .then((res) => res.text())
       .then((responseText) => {
         console.log(responseText);
         setSubmitted(true);
-        // Clear all fields after successful submission
         setFormData({ Email: '', Name: '', Message: '' });
-        // Reset the button after 3 seconds so the form can be reused
         setTimeout(() => setSubmitted(false), 3000);
       })
       .catch((err) => console.error('Submission error:', err))
@@ -105,6 +101,14 @@ export default function Contact() {
     { scope: containerRef }
   );
 
+  const buttonClass = [
+    'submit-button',
+    submitted ? 'submit-button--sent' : '',
+    isLoading ? 'submit-button--loading' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <section id="contact" ref={containerRef}>
       <div className="contact-container">
@@ -125,7 +129,6 @@ export default function Contact() {
           <div className="contact-header">
             <h1>Get in Touch</h1>
             <p className="contact-subtitle">Let's build something together.</p>
-            
           </div>
 
           <form id="inquiry-form" onSubmit={Submit} className="inquiry-form">
@@ -135,7 +138,7 @@ export default function Contact() {
                 <input
                   id="Name"
                   type="text"
-                  name="Name"     
+                  name="Name"
                   value={formData.Name}
                   onChange={handleChange}
                   placeholder="John"
@@ -147,7 +150,7 @@ export default function Contact() {
                 <input
                   id="Email"
                   type="email"
-                  name="Email"     
+                  name="Email"
                   value={formData.Email}
                   onChange={handleChange}
                   placeholder="email@example.com"
@@ -160,7 +163,7 @@ export default function Contact() {
               <label htmlFor="Message">Message</label>
               <textarea
                 id="Message"
-                name="Message"     
+                name="Message"
                 value={formData.Message}
                 onChange={handleChange}
                 placeholder="Tell us about your project..."
@@ -171,13 +174,12 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="submit-button"
+              className={buttonClass}
               disabled={!isFormComplete || isLoading || submitted}
             >
               {submitted ? 'Sent! ✓' : isLoading ? 'Sending...' : 'Send Inquiry'}
             </button>
           </form>
-          
         </div>
       </div>
 
