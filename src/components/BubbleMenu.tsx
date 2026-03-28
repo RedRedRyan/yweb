@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
@@ -14,14 +14,12 @@ type MenuItem = {
 };
 
 export type BubbleMenuProps = {
-  logo: ReactNode | string;
   onMenuClick?: (open: boolean) => void;
   className?: string;
   style?: CSSProperties;
   menuAriaLabel?: string;
   menuBg?: string;
   menuContentColor?: string;
-  useFixedPosition?: boolean;
   items?: MenuItem[];
   animationEase?: string;
   animationDuration?: number;
@@ -67,14 +65,12 @@ const DEFAULT_ITEMS: MenuItem[] = [
 ];
 
 export default function BubbleMenu({
-  logo,
   onMenuClick,
   className,
   style,
   menuAriaLabel = 'Toggle menu',
-  menuBg = '#fff',
+  menuBg = 'transparent',
   menuContentColor = '#111',
-  useFixedPosition = false,
   items,
   animationEase = 'back.out(1.5)',
   animationDuration = 0.5,
@@ -88,19 +84,6 @@ export default function BubbleMenu({
   const labelRefs = useRef<HTMLSpanElement[]>([]);
 
   const menuItems = items?.length ? items : DEFAULT_ITEMS;
-
-  const containerClassName = [
-    'bubble-menu',
-    'fixed',
-    'left-0 right-0 top-8',
-    'flex items-center justify-between',
-    'gap-4 px-8',
-    'pointer-events-none',
-    'z-[1001]',
-    className
-  ]
-    .filter(Boolean)
-    .join(' ');
 
   const handleToggle = () => {
     const nextState = !isMenuOpen;
@@ -182,7 +165,6 @@ export default function BubbleMenu({
 
   return (
     <>
-      {/* Workaround for silly Tailwind capabilities */}
       <style>{`
         .bubble-menu .menu-line {
           transition: transform 0.3s ease, opacity 0.3s ease;
@@ -236,44 +218,14 @@ export default function BubbleMenu({
         }
       `}</style>
 
-      <nav className={containerClassName} style={style} aria-label="Main navigation">
-        {/* <div
-          className={[
-            'bubble logo-bubble',
-            'inline-flex items-center justify-center',
-            'rounded-full',
-            'bg-white',
-            'shadow-[0_4px_16px_rgba(0,0,0,0.12)]',
-            'pointer-events-auto',
-            'h-12 md:h-14',
-            'px-4 md:px-8',
-            'gap-2',
-            'will-change-transform'
-          ].join(' ')}
-          aria-label="Logo"
-          style={{
-            background: menuBg,
-            minHeight: '48px',
-            borderRadius: '9999px'
-          }}
-        >
-          <span
-            className={['logo-content', 'inline-flex items-center justify-center', 'w-[120px] h-full'].join(' ')}
-            style={
-              {
-                ['--logo-max-height']: '60%',
-                ['--logo-max-width']: '100%'
-              } as CSSProperties
-            }
-          >
-            {typeof logo === 'string' ? (
-              <img src={logo} alt="Logo" className="bubble-logo max-h-[60%] max-w-full object-contain block" />
-            ) : (
-              logo
-            )}
-          </span>
-        </div> */}
-
+      {/* Toggle button — fixed top-left, always on top */}
+      <nav
+        aria-label="Main navigation"
+        className={['bubble-menu', 'fixed', 'top-8 left-8', 'z-[1001]', className]
+          .filter(Boolean)
+          .join(' ')}
+        style={style}
+      >
         <button
           type="button"
           className={[
@@ -283,7 +235,6 @@ export default function BubbleMenu({
             'rounded-full',
             'bg-white',
             'shadow-[0_4px_16px_rgba(0,0,0,0.12)]',
-            'pointer-events-auto',
             'w-12 h-12 md:w-14 md:h-14',
             'border-0 cursor-pointer p-0',
             'will-change-transform'

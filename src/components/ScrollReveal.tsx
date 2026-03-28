@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useMemo, ReactNode, RefObject } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
+import type { ReactNode, RefObject } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -17,7 +18,7 @@ interface ScrollRevealProps {
   wordAnimationEnd?: string;
 }
 
-const ScrollReveal: React.FC<ScrollRevealProps> = ({
+const ScrollReveal = ({
   children,
   scrollContainerRef,
   enableBlur = true,
@@ -28,7 +29,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   textClassName = '',
   rotationEnd = 'bottom bottom',
   wordAnimationEnd = 'bottom bottom'
-}) => {
+}: ScrollRevealProps) => {
   const containerRef = useRef<HTMLHeadingElement>(null);
 
   const splitText = useMemo(() => {

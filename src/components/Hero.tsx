@@ -1,16 +1,13 @@
-import React from 'react'
+import type { MouseEvent } from 'react'
 import Aurora from './Aurora'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrambleTextPlugin, SplitText, ScrollTrigger } from 'gsap/all';
-import { useMediaQuery } from 'react-responsive';
 
 gsap.registerPlugin(ScrambleTextPlugin, SplitText, ScrollTrigger);
 
 const Hero = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
-  const handleProjectsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleProjectsClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
   };

@@ -1,4 +1,3 @@
-import React from 'react'
 import { navLinks,socials } from '../../constants';
 
 const Footer = () => {

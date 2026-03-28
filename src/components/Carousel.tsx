@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'motion/react';
 import type { PanInfo } from 'motion/react';
-import React from 'react';
 import type { JSX } from 'react';
 
 // replace icons with your own if needed
@@ -11,6 +10,8 @@ export interface CarouselItem {
   description: string;
   id: number;
   icon: string;
+  link?: string;
+  bgColor?: string;
 }
 
 export interface CarouselProps {
@@ -78,9 +79,24 @@ function CarouselItem({ item, index, itemWidth, round, trackItemOffset, x, trans
   const outputRange = [90, 0, -90];
   const rotateY = useTransform(x, range, outputRange, { clamp: false });
 
+  const cardContent = (
+    <>
+      <div className="">
+        <img
+          src={item.icon}
+          alt={item.title}
+          className="size-24"
+        />
+      </div>
+      <div className="p-5">
+        <div className="mb-1 font-black text-lg text-white">{item.title}</div>
+        <p className="text-sm text-white">{item.description}</p>
+      </div>
+    </>
+  );
+
   return (
     <motion.div
-      key={`${item?.id ?? index}-${index}`}
       className={`relative shrink-0 flex flex-col ${
         round
           ? 'items-center justify-center text-center bg-[#060010] border-0'
@@ -90,21 +106,23 @@ function CarouselItem({ item, index, itemWidth, round, trackItemOffset, x, trans
         width: itemWidth,
         height: round ? itemWidth : '100%',
         rotateY: rotateY,
-        ...(round && { borderRadius: '50%' })
+        ...(round && { borderRadius: '50%' }),
+        backgroundColor: item.bgColor
       }}
       transition={transition}
     >
-      <div className="">
-      <img
-      src={item.icon}
-      alt={item.title}
-      className="size-24"
-    />
-      </div>
-      <div className="p-5">
-        <div className="mb-1 font-black text-lg text-white">{item.title}</div>
-        <p className="text-sm text-white">{item.description}</p>
-      </div>
+      {item.link ? (
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noreferrer"
+          className="flex h-full w-full flex-col items-center justify-center text-inherit no-underline"
+        >
+          {cardContent}
+        </a>
+      ) : (
+        cardContent
+      )}
     </motion.div>
   );
 }

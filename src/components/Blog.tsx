@@ -18,7 +18,7 @@ const Blog: React.FC = () => {
     
     
 
-    const blogTimeline = gsap.timeline({
+    gsap.timeline({
       scrollTrigger: {
         trigger: '#blog',
         start: 'top 80%',

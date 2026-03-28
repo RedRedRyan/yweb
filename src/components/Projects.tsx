@@ -1,4 +1,3 @@
-import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
