@@ -193,42 +193,42 @@ const featureList = [
 export const appList: Project[] = [
   {
     title: "Nairobi Block Exchange",
-    logo: "/images/nbx.jpg",
+    logo: "/images/projects/nbx.jpg",
     description: "Tokenizing equities and bonds on Hedera's Hashgraph.",
     link: "#",
     category: "Fintech"
   },
   {
     title: "RelyOn POS",
-    logo: "/images/Relyon.png",
+    logo: "/images/projects/Relyon.png",
     description: "A point-of-sale system with real-time inventory analytics .",
     link: "#",
     category: "Fintech"
   },
   {
     title: "Monster Trux",
-    logo: "/images/monstertrux.png",
+    logo: "/images/projects/mtlogo.png",
     description: "Drive, race and explore the Monsterlands. Built with Unity on Polygon.",
     link: "#",
     category: "Games"
   },
   {
     title: "Campus Connect",
-    logo: "/images/campusconnect.png",
+    logo: "/images/projects/cc.png",
     description: "Connect , collaborate  and share resources on campus.",
     link: "#",
     category: "Social"
   },
   {
     title: "Agent OG",
-    logo: "/images/agentog.png",
+    logo: "/images/projects/agent.png",
     description: "Rent an agent and pay with 0g tokens.",
     link: "#",
     category: "AI"
   },
   {
     title: "BlockFridge",
-    logo: "/images/blockfridge.png",
+    logo: "/images/projects/blockfridge.png",
     description: "Daily delivery of shopping and grocery.",
     link: "#",
     category: "Fintech"

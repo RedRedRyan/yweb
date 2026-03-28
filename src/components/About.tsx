@@ -88,9 +88,9 @@ const About = () => {
   baseRotation={3}
   blurStrength={4}
 >
-  When does a man die? When he is hit by a bullet? No! When he suffers a disease?
-  No! When he ate a soup made out of a poisonous mushroom?
-  No! A man dies when he is forgotten!
+In the heart of the Silicon Savannah,
+ four alumni from The Multimedia University of Kenya decided to blur the lines between technology and art.
+ Diverse talent, this is Y.
 </ScrollReveal>
 		</div>
 		
@@ -112,7 +112,7 @@ const About = () => {
 			/>
 
 		</div>
-		<div className='md:col-span-9 bg-dark'>
+		<div className='md:col-span-9 bg-white'>
 			<h1 className='text-green text-6xl font-arvo text-center py-4'>Tools</h1>
 		<div style={{ height: '200px', position: 'relative', overflow: 'hidden'}} >
       {/* Basic horizontal loop */}
@@ -125,7 +125,7 @@ const About = () => {
         hoverSpeed={0}
         scaleOnHover
         fadeOut
-        fadeOutColor="#2c026b"
+        fadeOutColor="white"
         ariaLabel="Technology partners"
       />
 	  </div>

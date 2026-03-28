@@ -15,11 +15,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
       <div className="relative z-10 flex h-full flex-1 flex-col">
         <div className="flex items-end gap-4">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-black/70 ring-1 ring-white/10">
+          <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-full bg-black/70 ring-1 ring-white/10">
             <img
               src={project.logo}
               alt={project.title}
-              className="h-9 w-9 object-contain"
+              className="h-16 w-16 object-contain"
             />
           </div>
 
