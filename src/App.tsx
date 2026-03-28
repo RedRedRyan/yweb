@@ -17,12 +17,11 @@ const App = () => {
     <main>
      
       <BubbleMenu
-          logo={<span style={{ fontWeight: 700 }}>RB</span>}
+          
           items={navLinks}
           menuAriaLabel="Toggle navigation"
           menuBg="#79d700"
           menuContentColor="#111111"
-          useFixedPosition={false}
           animationEase="back.out(1.5)"
           animationDuration={0.5}
           staggerDelay={0.12}
