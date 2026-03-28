@@ -127,7 +127,7 @@ body {
     
       
       .left-button {
-        @apply absolute left-1/2 -translate-x-1/2 bottom-20 md:w-fit inline-block rounded-full bg-purple text-green px-4 py-2 text-xl font-medium mb-8 z-50;
+        @apply absolute left-1/2 -translate-x-1/2 bottom-20 md:w-fit inline-block rounded-full bg-purple text-white px-4 py-2 text-xl font-medium mb-8 z-50;
       }
 
     .right-leaf {
@@ -244,7 +244,7 @@ body {
         }
 
         div {
-            @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-5 bottom-52 left-1/2 -translate-x-1/2;
+            @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-5 bottom-0 left-1/2 -translate-x-1/2;
 
             h3 {
                 @apply md:text-5xl text-2xl text-center font-serif md:w-full w-80 text-white;

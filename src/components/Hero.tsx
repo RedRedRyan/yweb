@@ -95,7 +95,7 @@ const Hero = () => {
           </div>
           <div className="view-cocktails">
             <p className="subtitle">
-              From software to films.
+              Software To Films.
             </p>
           </div>
         </div>

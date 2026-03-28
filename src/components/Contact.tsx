@@ -6,10 +6,9 @@ import { useGSAP } from '@gsap/react';
 import { useRef, useState } from 'react';
 
 interface FormData {
-  email: string;
-  firstName: string;
-  lastName: string;
-  message: string;
+  Email: string;
+  Name: string;
+  Message: string;
 }
 
 export default function Contact() {
@@ -17,12 +16,12 @@ export default function Contact() {
   const activeRef = useRef<HTMLElement | null>(null);
 
   const [formData, setFormData] = useState<FormData>({
-    email: '',
-    firstName: '',
-    lastName: '',
-    message: '',
+    Email: '',
+    Name: '',
+    Message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -31,15 +30,37 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  // All fields must be non-empty to enable the submit button
+  const isFormComplete = Object.values(formData).every((v) => v.trim() !== '');
+
+  function Submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ email: '', firstName: '', lastName: '', message: '' });
-      setSubmitted(false);
-    }, 2000);
-  };
+
+    const formEle = e.currentTarget;
+    const data = new FormData(formEle);
+
+    setIsLoading(true);
+
+    fetch(
+      'https://script.google.com/macros/s/AKfycbwvtHDUeNLeCe7dJBIss40vop-2-gwUmrC9Qvlw3K1nCcnemNlLlbQotZN2-7hbogdk/exec',
+      {
+        method: 'POST',
+        body: data,
+      }
+    )
+      // ✅ App Script returns plain text, not JSON — use .text() not .json()
+      .then((res) => res.text())
+      .then((responseText) => {
+        console.log(responseText);
+        setSubmitted(true);
+        // Clear all fields after successful submission
+        setFormData({ Email: '', Name: '', Message: '' });
+        // Reset the button after 3 seconds so the form can be reused
+        setTimeout(() => setSubmitted(false), 3000);
+      })
+      .catch((err) => console.error('Submission error:', err))
+      .finally(() => setIsLoading(false));
+  }
 
   useGSAP(
     () => {
@@ -48,7 +69,6 @@ export default function Contact() {
 
       activeRef.current = products[0];
 
-      // Store handlers mapped to each element so cleanup can remove the exact same reference
       const handlers = new Map<HTMLElement, () => void>();
 
       function changeGrid(el: HTMLElement) {
@@ -92,10 +112,10 @@ export default function Contact() {
         <div className="contact-image-wrapper">
           <div className="image-container">
             <div className="images">
-              <div className="product product-1" data-grid="img-1" ><img className='absolute inset-0' src='/images/game.png'/></div>
-              <div className="product product-2" data-grid="img-2" ><img className='absolute inset-0' src='/images/camera.png'/></div>
-              <div className="product product-3" data-grid="img-3" ><img className='absolute inset-0' src='/images/coding.png'/></div>
-              <div className="product product-4" data-grid="img-4" ><img className='absolute inset-0' src='/images/chat.png'/></div>
+              <div className="product product-1" data-grid="img-1"><img className='absolute inset-0' src='/images/game.png' /></div>
+              <div className="product product-2" data-grid="img-2"><img className='absolute inset-0' src='/images/camera.png' /></div>
+              <div className="product product-3" data-grid="img-3"><img className='absolute inset-0' src='/images/coding.png' /></div>
+              <div className="product product-4" data-grid="img-4"><img className='absolute inset-0' src='/images/chat.png' /></div>
             </div>
           </div>
         </div>
@@ -107,53 +127,40 @@ export default function Contact() {
             <p className="contact-subtitle">Let's build something together.</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="inquiry-form">
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="your@email.com"
-                required
-              />
-            </div>
-
+          <form id="inquiry-form" onSubmit={Submit} className="inquiry-form">
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="firstName">First Name</label>
+                <label htmlFor="Name">Your Name</label>
                 <input
-                  id="firstName"
+                  id="Name"
                   type="text"
-                  name="firstName"
-                  value={formData.firstName}
+                  name="Name"     
+                  value={formData.Name}
                   onChange={handleChange}
                   placeholder="John"
                   required
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="lastName">Last Name</label>
+                <label htmlFor="Email">Your Email</label>
                 <input
-                  id="lastName"
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
+                  id="Email"
+                  type="email"
+                  name="Email"     
+                  value={formData.Email}
                   onChange={handleChange}
-                  placeholder="Doe"
+                  placeholder="email@example.com"
                   required
                 />
               </div>
             </div>
 
             <div className="form-group">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="Message">Message</label>
               <textarea
-                id="message"
-                name="message"
-                value={formData.message}
+                id="Message"
+                name="Message"     
+                value={formData.Message}
                 onChange={handleChange}
                 placeholder="Tell us about your project..."
                 rows={6}
@@ -164,9 +171,9 @@ export default function Contact() {
             <button
               type="submit"
               className="submit-button"
-              disabled={submitted}
+              disabled={!isFormComplete || isLoading || submitted}
             >
-              {submitted ? 'Sent!' : 'Send Inquiry'}
+              {submitted ? 'Sent! ✓' : isLoading ? 'Sending...' : 'Send Inquiry'}
             </button>
           </form>
         </div>
