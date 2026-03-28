@@ -24,14 +24,14 @@ const navLinks = [
     },
     {
       label: 'blog',
-      href: '#',
+      href: '#blog',
       ariaLabel: 'Blog',
       rotation: 8,
       hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
     },
     {
       label: 'contact',
-      href: '#',
+      href: '#contact',
       ariaLabel: 'Contact',
       rotation: -8,
       hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
@@ -95,17 +95,17 @@ const navLinks = [
     {
        name: "Youtube",
        icon: "/icons/youtube.png",
-       url: "#",
+       url: "https://www.youtube.com/@thisisystudios",
     },
     {
        name: "X (Twitter)",
        icon: "/icons/twitter.png",
-       url: "#",
+       url: "https://x.com/YtekStudios",
     },
     {
        name: "Discord",
        icon: "/icons/discord.png",
-       url: "#",
+       url: "https://discord.gg/xW4RSatyb",
     },
    ];
 
@@ -195,42 +195,42 @@ export const appList: Project[] = [
     title: "Nairobi Block Exchange",
     logo: "/images/projects/nbx.jpg",
     description: "Tokenizing equities and bonds on Hedera's Hashgraph.",
-    link: "#",
+    link: "https://www.nbx-exchange.co.ke/",
     category: "Fintech"
   },
   {
     title: "RelyOn POS",
     logo: "/images/projects/Relyon.png",
     description: "A point-of-sale system with real-time inventory analytics .",
-    link: "#",
+    link: "https://github.com/JudeTulel/CompletePOS",
     category: "Fintech"
   },
   {
     title: "Monster Trux",
     logo: "/images/projects/mtlogo.png",
     description: "Drive, race and explore the Monsterlands. Built with Unity on Polygon.",
-    link: "#",
+    link: "https://monstertrux.vercel.app/",
     category: "Games"
   },
   {
     title: "Campus Connect",
     logo: "/images/projects/cc.png",
     description: "Connect , collaborate  and share resources on campus.",
-    link: "#",
+    link: "https://github.com/costoUnity/Campus-Connect-Project",
     category: "Social"
   },
   {
     title: "Agent OG",
     logo: "/images/projects/agent.png",
     description: "Rent an agent and pay with 0g tokens.",
-    link: "#",
+    link: "https://github.com/JudeTulel/Agent0G",
     category: "AI"
   },
   {
     title: "BlockFridge",
     logo: "/images/projects/blockfridge.png",
     description: "Daily delivery of shopping and grocery.",
-    link: "#",
+    link: "https://github.com/JudeTulel/BlockFridgeLanding",
     category: "Fintech"
   }
 ];

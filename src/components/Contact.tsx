@@ -125,6 +125,7 @@ export default function Contact() {
           <div className="contact-header">
             <h1>Get in Touch</h1>
             <p className="contact-subtitle">Let's build something together.</p>
+            
           </div>
 
           <form id="inquiry-form" onSubmit={Submit} className="inquiry-form">
@@ -176,6 +177,7 @@ export default function Contact() {
               {submitted ? 'Sent! ✓' : isLoading ? 'Sending...' : 'Send Inquiry'}
             </button>
           </form>
+          
         </div>
       </div>
 

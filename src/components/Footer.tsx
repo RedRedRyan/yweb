@@ -23,6 +23,7 @@ const Footer = () => {
 			))}
 		 </div>
 		 
+		 
 		</div>
 		
 		<div className="md:col-span-2">
@@ -37,6 +38,7 @@ const Footer = () => {
 		</div>
 
         <div className="md:col-span-2">
+		<p className='text-purple mb-3 text-xl'>ystudioske@gmail.com</p>
         <p className='text-[white]'>&copy; {new Date().getFullYear()} YStudios. All Rights Reserved.</p>
             </div>
         
