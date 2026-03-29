@@ -156,28 +156,28 @@ const navLinks = [
        description: 'Software Engineer.Web3, AI, Robotics & IoT .',
        id: 1,
        icon: "/images/jude.png",
-       link: 'https://www.linkedin.com/in/jude-tulel-9b1a4b1a0/'
+       link: 'https://github.com/JudeTulel'
      },
      {
        title: 'Costo',
        description: 'Environmental Artist. 3D Modeling and Animations.',
        id: 2,
        icon: "/images/costo.png",
-       link: 'https://www.linkedin.com/in/costo-odhiambo-9b1a4b1a0/'
+       link: 'https://github.com/costoUnity'
      },
      {
        title: 'Koiya',
        description: 'Motion Designer. Audio and Visual Editor',
        id: 3,
        icon: "/images/koiya.png",
-        link: 'https://www.linkedin.com/in/koiya-odhiambo-9b1a4b1a0/'
+        link: 'https://www.instagram.com/ancestor_create?igsh=MThqYWE4aWRkNGhkYg=='
      },
      {
        title: 'RedRyan',
        description: 'UI UX Artist. Unity Game Developer.',
        id: 4,
        icon: "/images/redryan.png",
-        link: 'https://www.linkedin.com/in/redryan-odhiambo-9b1a4b1a0/'
+        link: 'https://github.com/RedRedRyan'
      }
 
    ];
