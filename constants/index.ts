@@ -223,7 +223,7 @@ export const appList: Project[] = [
     title: "Agent OG",
     logo: "/images/projects/agent.png",
     description: "Rent an agent and pay with 0g tokens.",
-    link: "https://github.com/JudeTulel/Agent0G",
+    link: "https://agent0-g.vercel.app/",
     category: "AI"
   },
   {
