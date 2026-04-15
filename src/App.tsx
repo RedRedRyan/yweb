@@ -9,6 +9,7 @@ import Projects from './components/Projects'
 import { navLinks } from '../constants'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
+import { Analytics } from '@vercel/analytics/react';
 gsap.registerPlugin(ScrollTrigger, SplitText, MorphSVGPlugin, ScrambleTextPlugin, ScrollSmoother, DrawSVGPlugin, Flip)
 const App = () => {
 
@@ -32,6 +33,8 @@ const App = () => {
       <Blog />
       <Contact/>
       <Footer />
+      <Analytics />
+
     </main>
   )
 }
