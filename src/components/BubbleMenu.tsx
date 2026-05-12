@@ -35,6 +35,13 @@ const DEFAULT_ITEMS: MenuItem[] = [
     hoverStyles: { bgColor: '#3b82f6', textColor: '#ffffff' }
   },
   {
+    label: 'services',
+    href: '#services',
+    ariaLabel: 'Services',
+    rotation: 8,
+    hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
+  },
+  {
     label: 'about',
     href: '#about',
     ariaLabel: 'About',
@@ -48,13 +55,7 @@ const DEFAULT_ITEMS: MenuItem[] = [
     rotation: 8,
     hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
   },
-  {
-    label: 'blog',
-    href: '#blog',
-    ariaLabel: 'Blog',
-    rotation: 8,
-    hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
-  },
+ 
   {
     label: 'contact',
     href: '#contact',

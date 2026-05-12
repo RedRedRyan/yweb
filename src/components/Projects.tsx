@@ -93,18 +93,7 @@ const Projects = () => {
   </div>
 		</div>
 		
-		<div className="masked-container">
-		 <h2 className="will-fade" id='build'>Made  Y</h2>
-		 <div id="masked-content">
-      <h2> made by us</h2>
-      </div>
-      <div  className='bottom-0 text-gradient text-4xl'>
-        <p>Build It With Us</p>
-        </div>
-      
-        
-		 
-		</div>
+		
 	 </div>
 
     </section>

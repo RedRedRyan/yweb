@@ -7,8 +7,8 @@ import About from './components/About'
 import BubbleMenu from './components/BubbleMenu'
 import Projects from './components/Projects'
 import { navLinks } from '../constants'
-import Blog from './components/Blog'
 import Contact from './components/Contact'
+import Services from './components/Services'
 import { Analytics } from '@vercel/analytics/react';
 gsap.registerPlugin(ScrollTrigger, SplitText, MorphSVGPlugin, ScrambleTextPlugin, ScrollSmoother, DrawSVGPlugin, Flip)
 const App = () => {
@@ -28,9 +28,9 @@ const App = () => {
           staggerDelay={0.12}
       />
       <Hero />
+      <Services />
       <About />
       <Projects />
-      <Blog />
       <Contact/>
       <Footer />
       <Analytics />

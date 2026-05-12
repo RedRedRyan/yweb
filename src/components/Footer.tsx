@@ -38,6 +38,8 @@ const Footer = () => {
 
         <div className="md:col-span-2">
 		<p className='text-purple mb-3 text-xl'>ystudioske@gmail.com</p>
+		<p>+254 715 402 567</p>
+		<p>+254 795 706 200</p>
         <p className='text-[white]'>&copy; {new Date().getFullYear()} YStudios. All Rights Reserved.</p>
             </div>
         

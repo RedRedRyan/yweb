@@ -9,6 +9,13 @@ const navLinks = [
       hoverStyles: { bgColor: '#3b82f6', textColor: '#ffffff' }
     },
     {
+      label: 'services',
+      href: '#services',
+      ariaLabel: 'Services',
+      rotation: 8,
+      hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
+    },
+    {
       label: 'about',
       href: '#about',
       ariaLabel: 'About',
@@ -22,13 +29,7 @@ const navLinks = [
       rotation: 8,
       hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
     },
-    {
-      label: 'blog',
-      href: '#blog',
-      ariaLabel: 'Blog',
-      rotation: 8,
-      hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
-    },
+
     {
       label: 'contact',
       href: '#contact',
@@ -115,16 +116,16 @@ const navLinks = [
       title: 'Building Agent 0g',
       image: '/images/0g.webp',
       description: 'How I created an AI agent that can perform tasks and interact with users. From concept to code, I share the journey of building Agent 0g and its potential applications in various industries.',
-      date: 'March 15, 2024',
+      date: 'December 15, 2025',
       author: 'Jude',
       link: "https://x.com/i/status/1986054121862873144"
     },
     {
       id: 2,
-      title: 'Coming Soon',
+      title: 'Intro to AI',
       image: '/images/blog.png',
-      description: 'Discover the latest blogs and insights from our team. Stay tuned for exciting updates and in-depth articles on technology, innovation, and more.',
-      date: 'Estimated release: April 2024',
+      description: 'We partnered with The Sirkelly Foundation to host a free AI workshop for students. We covered the basics of AI, its applications, and how to get started in the field.',
+      date: 'May 11, 2026',
       author: 'Ystudios team',
       link: "#blog"
     },
@@ -133,7 +134,7 @@ const navLinks = [
       title: 'Coming Soon',
       image: '/images/blog.png',
       description: 'Discover the latest blogs and insights from our team. Stay tuned for exciting updates and in-depth articles on technology, innovation, and more.',
-      date: 'Estimated release: April 2024',
+      date: 'Estimated release: June 2026',
       author: 'Ystudios team',
       link: "#blog"
       
@@ -144,7 +145,7 @@ const navLinks = [
       title: 'Coming Soon',
       image: '/images/blog.png',
       description: 'Discover the latest blogs and insights from our team. Stay tuned for exciting updates and in-depth articles on technology, innovation, and more.',
-      date: 'Estimated release: April 2024',
+      date: 'Estimated release: September 2026',
       author: 'Ystudios team',
       link: "#blog"
     }
